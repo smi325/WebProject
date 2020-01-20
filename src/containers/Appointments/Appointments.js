@@ -91,7 +91,9 @@ class Appointments extends Component {
       endDate,
       clientName,
       statusId,
-      onlyMe
+      onlyMe,
+        holderName,
+        compliences
     } = ds.filter
 
     return (
@@ -136,6 +138,20 @@ class Appointments extends Component {
                 className='Appointments-FilterField'
                 onChange={this.onChangeFilterField}
               />
+              <TextField
+                    name='holderName'
+                    value={holderName}
+                    placeholder='Принимающий'
+                    className='Appointments-FilterField'
+                    onChange={this.onChangeFilterField}
+              />
+              <TextField
+                    name='compliences'
+                    value={compliences}
+                    placeholder='Жалобы'
+                    className='Appointments-FilterField'
+                    onChange={this.onChangeFilterField}
+               />
               <SelectField
                 name='statusId'
                 value={statusId}

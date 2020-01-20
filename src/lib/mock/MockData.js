@@ -56,6 +56,8 @@ export function getAppointments (params) {
       startDate,
       endDate,
       clientName,
+    holderName,
+    compliences,
       onlyMe,
     } = params
 
@@ -64,7 +66,9 @@ export function getAppointments (params) {
       (endDate ? o.date <= endDate : true) &&
       (clientName ? (clientName.length > 2 ? o.clientName.includes(clientName) : true) : true) && 
       (isNumber(statusId) && statusId >= 0 ? statusId === o.statusId : true) &&
-      (onlyMe ? o.holderName === USER : true)
+      (onlyMe ? o.holderName === USER : true) &&
+          (holderName ? (holderName.length > 2 ? o.holderName.includes(holderName) : true) : true) &&
+          (compliences ? (compliences.length > 2 ? o.compliences.includes(compliences) : true) : true)
   })
 }
 
